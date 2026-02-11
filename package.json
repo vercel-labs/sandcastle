@@ -1,0 +1,70 @@
+{
+  "name": "sandcastle",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio",
+    "snapshot": "bun run src/scripts/rebuild-golden-snapshot.ts",
+    "test:sandbox": "bun run src/scripts/test-sandbox-services.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.2",
+    "@radix-ui/react-context-menu": "^2.2.16",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-label": "^2.1.8",
+    "@radix-ui/react-separator": "^1.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@radix-ui/react-switch": "^1.2.6",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "@vercel/firewall": "^1.1.2",
+    "@vercel/sandbox": "^1.5.0",
+    "better-all": "^0.0.7",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cmdk": "^1.1.1",
+    "dotenv": "^17.2.4",
+    "drizzle-orm": "^0.45.1",
+    "ghostty-web": "^0.4.0",
+    "lucide-react": "^0.563.0",
+    "next": "16.1.6",
+    "next-themes": "^0.4.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "swr": "^2.4.0",
+    "tailwind-merge": "^3.4.0",
+    "uuid": "^13.0.0",
+    "xpra-html5-client": "^2.3.0",
+    "zustand": "^5.0.11"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^20",
+    "@types/nprogress": "^0.2.3",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/uuid": "^11.0.0",
+    "drizzle-kit": "^0.31.9",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "packageManager": "pnpm@10.28.2+sha512.41872f037ad22f7348e3b1debbaf7e867cfd448f2726d9cf74c08f19507c31d2c8e7a11525b983febc2df640b5438dee6023ebb1f84ed43cc2d654d2bc326264"
+}

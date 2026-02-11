@@ -1,0 +1,20 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/golden-snapshot",
+      "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/sandbox-lifecycle",
+      "schedule": "*/30 * * * *"
+    },
+    {
+      "path": "/api/cron/warm-pool",
+      "schedule": "*/10 * * * *"
+    },
+    {
+      "path": "/api/cron/guest-cleanup",
+      "schedule": "0 */6 * * *"
+    }
+  ]
+}
