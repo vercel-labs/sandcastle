@@ -86,22 +86,25 @@ export async function replenishPool(): Promise<{
     return { created: 0, target: WARM_POOL_TARGET, existing: available };
   }
 
+  const CONCURRENCY = 5;
   let created = 0;
 
-  // Create VMs sequentially to avoid hammering the API
-  for (let i = 0; i < needed; i++) {
-    try {
-      const sandbox = await createSandbox(snapshotId);
-      await db.insert(warmPool).values({
-        sandboxId: sandbox.sandboxId,
-        snapshotId,
-        status: "available",
-      });
-      created++;
-    } catch (err) {
-      console.error("[warm-pool] Failed to create warm VM:", err);
-      break;
-    }
+  for (let i = 0; i < needed; i += CONCURRENCY) {
+    const batch = Array.from({ length: Math.min(CONCURRENCY, needed - i) }, () =>
+      createSandbox(snapshotId)
+        .then(async (sandbox) => {
+          await db.insert(warmPool).values({
+            sandboxId: sandbox.sandboxId,
+            snapshotId,
+            status: "available",
+          });
+          created++;
+        })
+        .catch((err) => {
+          console.error("[warm-pool] Failed to create warm VM:", err);
+        }),
+    );
+    await Promise.all(batch);
   }
 
   return { created, target: WARM_POOL_TARGET, existing: available };
