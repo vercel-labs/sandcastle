@@ -4,7 +4,7 @@ import { SANDBOX_PORTS, PORTS } from "./ports";
 import { getServiceCode } from "./sandbox-services";
 import { getEcosystemConfig, SERVICE_DIR, XPRA_DISPLAY, DBUS_SOCKET_PATH } from "./ecosystem-config";
 
-const DEFAULT_TIMEOUT = 20 * 60 * 1000; // 20 minutes
+const DEFAULT_TIMEOUT = 60 * 60 * 1000; // 1 hour
 
 // sandbox.domain() returns "https://subdomain.vercel.run"
 // We strip the protocol so consumers can choose https:// or wss://

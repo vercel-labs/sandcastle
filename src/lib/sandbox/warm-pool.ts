@@ -6,7 +6,7 @@ import { createSandbox, getSandbox } from "./client";
 import type { SandboxInfo } from "@/types/sandbox";
 
 const WARM_POOL_TARGET = 15;
-const WARM_VM_MAX_AGE_MS = 15 * 60 * 1000; // 15 min (sandboxes timeout at 20)
+const WARM_VM_MAX_AGE_MS = 45 * 60 * 1000; // 45 min (sandboxes timeout at 60)
 
 /**
  * Claim a warm VM from the pool. Returns SandboxInfo if one was available,
