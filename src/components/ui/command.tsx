@@ -39,6 +39,7 @@ function CommandDialog({
           className="fixed left-[50%] top-[20%] z-[9999] w-full max-w-lg translate-x-[-50%] overflow-hidden rounded-xl bg-background-100 shadow-lg"
           cmdk-dialog=""
         >
+          <DialogPrimitive.Title className="sr-only">Command palette</DialogPrimitive.Title>
           <Command
             className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-gray-700 [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3"
             {...props}

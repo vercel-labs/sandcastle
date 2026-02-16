@@ -4,6 +4,8 @@
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
 
+@custom-variant dark (&&:where(.dark, .dark *));
+
 :root {
   font-size: 16px;
 
